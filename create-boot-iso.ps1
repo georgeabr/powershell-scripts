@@ -1,4 +1,5 @@
 # Create a bootable USB ISO from a Windows install folder
+# Need to install Windows ADK first
 # Path to the Extracted or Mounted Windows ISO 
 $ISOMediaFolder = 'H:\Windows-deploy\Windows-10-extracted'
 
