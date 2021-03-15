@@ -17,6 +17,9 @@ Get-MailboxStatistics -Identity user | format-table -Property Totalitemsize
 # Get AD membership for Exchange contact
 get-group | where-object -FilterScript {$_.Members -like "*Steve Wade"}
 
+# Connect to MS Exchange online
+# https://docs.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps
+Import-Module ExchangeOnlineManagement; Connect-ExchangeOnline -UserPrincipalName user@test.org.uk
 ###########################################################################################
 # Exchange Powershell - add FullAccess + Send As for a user, and see permissions
 Add-MailboxPermission -Identity "A Forms" -User emma -AccessRights FullAccess -InheritanceType All
