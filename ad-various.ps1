@@ -13,4 +13,8 @@ Set-DistributionGroup -Identity AllNFCMembers -AcceptMessagesOnlyFrom @{add="use
 Set-DistributionGroup -Identity AllNFCMembers -AcceptMessagesOnlyFrom @{add="user","other.user"}
 Set-DistributionGroup -Identity AllNFCMembers -AcceptMessagesOnlyFrom @{remove="user"}
 
-
+# get default users and computers containers - for new users and computers joined to the domain
+# use redircmp and redirusr to redirect
+# https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/redirect-users-computers-containers
+Import-Module ActiveDirectory
+$x = Get-ADObject -Filter {isCriticalSystemObject -eq $true} | Where {($_.objectclass -eq 'container' -or $_.objectclass -eq 'organizationalUnit') -and (-not ($_.DistinguishedName -like '*ForeignSecurityPrincipals,DC*')) -and (-not ($_.DistinguishedName -like '*CN=System,DC*')) -and (-not ($_.DistinguishedName -like '*Domain Controllers,DC*')) -and (-not ($_.DistinguishedName -like '*ForeignSecurityPrincipals*'))}; $x | ft *dname
