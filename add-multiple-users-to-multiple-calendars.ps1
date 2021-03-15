@@ -1,13 +1,12 @@
+add-pssnapin Microsoft.Exchange.Management.PowerShell.E2010
+
 $global:debug_print = '0'
 # 0 - no verbosity, modifies
 # 1 - full verbose, does not modify
 # 2 - show WhatIf only, does not modify
 # WRITE-output($debug_print)
-# $add_to_users = 'national.president', 'jason.birks','muntazir.dipoti','Greg.Deacon'
-$calendar_users = 'national.president', 'jason.birks','muntazir.dipoti','Greg.Deacon'
-# $calendar_users = 'Stephen','Brian','Anne','Adrian.Roper','Beverly.Turner','Jeremy.Hayes','Peter.Williamson','nat','Mike.Baillie','Greg.Deacon'
-# $calendar_users = 'Brian','Mike.Baillie','nat','Beverly.Turner','Anne','Adrian.Roper','Stephen','Terry.Morien'
-$add_to_users = 'Brian','Mike.Baillie','nat','Beverly.Turner','Anne','Adrian.Roper','Stephen','Terry.Morien'
+$calendar_users = 'user1', 'user2'
+$add_to_users = 'Brian','Anne','Stephen'
 
 $access_rights = 'Reviewer'
 <#
