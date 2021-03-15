@@ -13,9 +13,4 @@ Set-DistributionGroup -Identity AllNFCMembers -AcceptMessagesOnlyFrom @{add="use
 Set-DistributionGroup -Identity AllNFCMembers -AcceptMessagesOnlyFrom @{add="user","other.user"}
 Set-DistributionGroup -Identity AllNFCMembers -AcceptMessagesOnlyFrom @{remove="user"}
 
-# Get AD membership for AD user
-Get-ADPrincipalGroupMembership "Steve Wade" | select name
-get-group | where-object -FilterScript {$_.Members -contains "Wade"}
 
-# Get AD membership for Exchange contact
-get-group | where-object -FilterScript {$_.Members -like "*Steve Wade"}
