@@ -2,7 +2,7 @@
 ## Powershell scripts to solve AD/Exchange tasks
 ### Windows deployment
 - Create a bootable USB ISO from a Windows install folder - [link](create-boot-iso.ps1)
-## For Active Directory
+### For Active Directory
 - Various commands - [link](ad-various.ps1)
 - Add user rights to folder - [link](add-user-righs-folder.ps1)
 ### For MS Exchange
