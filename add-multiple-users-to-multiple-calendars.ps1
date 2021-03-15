@@ -5,9 +5,10 @@ $global:debug_print = '0'
 # 1 - full verbose, does not modify
 # 2 - show WhatIf only, does not modify
 # WRITE-output($debug_print)
+
 $calendar_users = 'user1', 'user2'
 $add_to_users = 'Brian','Anne','Stephen'
-# add_to_users = to what users to add calendar access to people the calendar_users list
+# people in the list calendar_users will be granted access the calendars of add_to_users
 
 $access_rights = 'Reviewer'
 <#
