@@ -11,9 +11,20 @@ Get-DistributionGroup AllNationalCouncillors | Get-DistributionGroupMember | sel
 # filter mailbox export requests that are failed
 Get-MailboxExportRequest | where-object { $_.status -eq "Failed" } | Format-Table -Autosize
 
-# - get mailbox size in GB
+# - get mailbox size 
 Get-MailboxStatistics -Identity user | format-table -Property Totalitemsize
 
+###########################################################################################
+# Exchange Powershell - add FullAccess + Send As for a user, and see permissions
+Add-MailboxPermission -Identity "A Forms" -User emma -AccessRights FullAccess -InheritanceType All
+Get-Mailbox "A Forms" | Add-ADPermission -User emma -AccessRights ExtendedRight -ExtendedRights "Send As" -InheritanceType All
+Get-Mailbox "A Forms" | Get-MailboxPermission -User emma.rowe | ft -AutoSize
+
+Get-ADPermission -Identity "National President" | where {($_.ExtendedRights -like "*Send-As*") -and ($_.User -like "*emma*")} |Format-Table -AutoSize Identity,User
+- for Exchange online:
+Add-RecipientPermission "A-Forms" -AccessRights SendAs -Trustee "Emma"
+
+# When an user wants access to a mailbox, give them full access + send as.
 ###########################################################################################
 # Add an user to another user's distribution lists
 # - in the below, add Emma to National President's distribution lists
