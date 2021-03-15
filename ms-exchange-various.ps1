@@ -11,6 +11,9 @@ Get-DistributionGroup AllNationalCouncillors | Get-DistributionGroupMember | sel
 # filter mailbox export requests that are failed
 Get-MailboxExportRequest | where-object { $_.status -eq "Failed" } | Format-Table -Autosize
 
+# - get mailbox size in GB
+Get-MailboxStatistics -Identity user | format-table -Property Totalitemsize
+
 ###########################################################################################
 # Add an user to another user's distribution lists
 # - in the below, add Emma to National President's distribution lists
