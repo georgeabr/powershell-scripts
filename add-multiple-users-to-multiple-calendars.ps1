@@ -1,14 +1,15 @@
 add-pssnapin Microsoft.Exchange.Management.PowerShell.E2010
 
-$global:debug_print = '0'
+$global:debug_print = '2'
 # 0 - no verbosity, modifies
 # 1 - full verbose, does not modify
 # 2 - show WhatIf only, does not modify
 # WRITE-output($debug_print)
 
-$calendar_users = 'user1', 'user2'
-$add_to_users = 'Brian','Anne','Stephen'
-# people in the list calendar_users will be granted access the calendars of add_to_users
+$source_users = 'nat', 'national.president'
+$target_calendars = 'Brian','Anne','Stephen'
+# people in the list source_users will be granted access the calendars of people in the list target_calendars
+# What if: Adding mailbox folder permission on "Anne:\calendar" for user "National President", access rights "'Reviewer'".
 
 $access_rights = 'Reviewer'
 <#
@@ -29,7 +30,7 @@ function AddCalendarAccessForUsers
  # WRITE-output($debug_print)
  write-output "======"
 if ($debug_print -match '1') { write-output "1.1. BEGIN OF COMPLETE WHAT CALENDAR LOOP" }
- ForEach ($user2 in $calendar_users) {
+ ForEach ($user2 in $target_calendars) {
     if ($debug_print -match '1') { write-output "1.1.1. BEGIN OF INDIVIDUAL WHAT CALENDAR LOOP" }
     # AddCalendarAccessForUsersHelper($addforwhatusers, $user2)
     #write-output "Who to add" $addforusers
@@ -61,7 +62,7 @@ if ($debug_print -match '1' -Or $debug_print -match '2') {
 }
 
 clear-host 
-ForEach ($user1 in $add_to_users) {
+ForEach ($user1 in $source_users) {
     
     if ($debug_print -match '1') { write-output "1. BEGIN OF WHO TO ADD LOOP" }
     AddCalendarAccessForUsers($user1)
