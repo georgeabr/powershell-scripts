@@ -4,3 +4,25 @@ Get-MessageTrackingLog -Recipients xxx@test.org.uk -Start "11/18/2020 8:00AM" -E
 
 #filter mail contacts
 get-mailcontact | where-object {$_.name -like  "*Wagg*"} | format-list -Property Alias,DisplayName,PrimarySmtpAddress
+
+# Export members, titles and email addresses for a distribution list - Exchange powershell
+Get-DistributionGroup AllNationalCouncillors | Get-DistributionGroupMember | select DisplayName,Title,PrimarySMTPAddress | Export-CSV dl-AllNationalCouncillors.csv
+
+# filter mailbox export requests that are failed
+Get-MailboxExportRequest | where-object { $_.status -eq "Failed" } | Format-Table -Autosize
+
+###########################################################################################
+# Add an user to another user's distribution lists
+# - in the below, add Emma to National President's distribution lists
+# - it also removes blank spaces when exporting the lists to a text file
+
+$UserDistinguishedName = Get-Mailbox national.president@test.org.uk | Select -ExpandProperty DistinguishedName; 
+Get-DistributionGroup -ResultSize Unlimited -Filter "Members -eq '$UserDistinguishedName'" | Select -ExpandProperty DisplayName | Set-Content distribution-lists.txt
+
+foreach($group in (get-content "distribution-lists.txt")){Add-DistributionGroupMember $group –Member "emma@test.org.uk" -Verbose}
+
+$UserDistinguishedName = Get-Mailbox emma@test.org.uk | Select -ExpandProperty DistinguishedName; 
+Get-DistributionGroup -ResultSize Unlimited -Filter "Members -eq '$UserDistinguishedName'" | Select -ExpandProperty DisplayName
+###########################################################################################
+
+#
