@@ -7,7 +7,7 @@ $global:debug_print = '0'
 # WRITE-output($debug_print)
 $calendar_users = 'user1', 'user2'
 $add_to_users = 'Brian','Anne','Stephen'
-# add_to_users = to what users to add calendar access from the calendar_users list
+# add_to_users = to what users to add calendar access to people the calendar_users list
 
 $access_rights = 'Reviewer'
 <#
