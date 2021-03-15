@@ -1,6 +1,6 @@
 
 ## Powershell scripts to solve AD/Exchange tasks
-### Windows MDT
+### Windows deployment
 - Create a bootable USB ISO from a Windows install folder - [link](create-boot-iso.ps1)
 ### For MS Exchange
 - Add access for multiple users to multiple calendars - [link](add-multiple-users-to-multiple-calendars.ps1)
