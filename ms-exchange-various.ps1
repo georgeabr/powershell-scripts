@@ -14,6 +14,9 @@ Get-MailboxExportRequest | where-object { $_.status -eq "Failed" } | Format-Tabl
 # - get mailbox size 
 Get-MailboxStatistics -Identity user | format-table -Property Totalitemsize
 
+# Get AD membership for Exchange contact
+get-group | where-object -FilterScript {$_.Members -like "*Steve Wade"}
+
 ###########################################################################################
 # Exchange Powershell - add FullAccess + Send As for a user, and see permissions
 Add-MailboxPermission -Identity "A Forms" -User emma -AccessRights FullAccess -InheritanceType All
