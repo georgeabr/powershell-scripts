@@ -1,7 +1,7 @@
 
 ## Powershell/.cmd scripts for post install configuration of a computer
 
-test [link](windows-deploy/activate-windows.ps1)
+- activate Windows based on product key embedded in the PC BIOS - [link](windows-deploy/activate-windows.ps1)
 
 ## Powershell scripts to solve AD/Exchange tasks
 ### Windows deployment
