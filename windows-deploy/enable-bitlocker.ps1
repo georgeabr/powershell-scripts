@@ -4,7 +4,7 @@ Import-Module bitlocker
 $DateInt = ((Get-Date).ToString('yyyyMMddHHmm'))
 Enable-BitLocker -MountPoint C: -UsedSpaceOnly -EncryptionMethod Aes256 -TpmProtector -SkipHardwareTest #-WhatIf
 
-$Cred = $(New-Object -Type 'PSCredential' -Arg 'CORP\djoin',$(ConvertTo-SecureString '9qJ+68sv9ht48PND' -AsPlain -Force))
+$Cred = $(New-Object -Type 'PSCredential' -Arg 'CORP\djoin',$(ConvertTo-SecureString 'password' -AsPlain -Force))
 New-PSDrive -Name "T" -Root "\\192.168.113.10\Teams" -Persist -PSProvider FileSystem -Credential $Cred
 
 $PCSerialNumber = (Get-WmiObject -Class Win32_Bios).SerialNumber
