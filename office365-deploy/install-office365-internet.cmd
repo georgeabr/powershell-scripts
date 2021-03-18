@@ -5,7 +5,7 @@
 @echo.
 
 @echo Mapping Office 365 network installation folder
-net use f: \\192.168.113.11\Office365 /user:CORP\djoin 9qJ+68sv9ht48PND
+net use f: \\192.168.113.11\Office365 /user:CORP\djoin password
 
 @echo Copying setup files
 mkdir c:\office365-install
