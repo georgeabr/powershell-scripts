@@ -1,17 +1,17 @@
 # show a dialog box to rename PC to something meaningful (Joanne's laptop); add this computer to the TeamViewer PC list.
 
-# start-process -Wait msiexec -ArgumentList "/i `"TeamViewer_Host.msi`" /qn CUSTOMCONFIGID=yzvjkgn APITOKEN=11536339-GUVJo4ZMhiV9VErAC1xZ ASSIGNMENTOPTIONS=`"--grant-easy-access --alias `'$env:COMPUTERNAME (my computer) `' `"  "
+# start-process -Wait msiexec -ArgumentList "/i `"TeamViewer_Host.msi`" /qn CUSTOMCONFIGID=configid APITOKEN=SOME-API-TOKEN ASSIGNMENTOPTIONS=`"--grant-easy-access --alias `'$env:COMPUTERNAME (my computer) `' `"  "
 
 #ASSIGNMENTOPTIONS=--grant-easy-access --alias `"$env:COMPUTERNAME (my computer) `"
 #ASSIGNMENTOPTIONS=`"--grant-easy-access --alias `"$env:COMPUTERNAME (my computer) `" `"
 
 # below works !!!
-# start-process -Wait msiexec -ArgumentList "/i `"C:\Users\nfrn\Downloads\TeamViewer_Host.msi`" /passive CUSTOMCONFIGID=yzvjkgn APITOKEN=11536339-GUVJo4ZMhiV9VErAC1xZ ASSIGNMENTOPTIONS=`"--grant-easy-access --alias `"`"$env:COMPUTERNAME (my computer) `"`" `"  "
+# start-process -Wait msiexec -ArgumentList "/i `"C:\Users\nfrn\Downloads\TeamViewer_Host.msi`" /passive CUSTOMCONFIGID=configid APITOKEN=SOME-API-TOKEN ASSIGNMENTOPTIONS=`"--grant-easy-access --alias `"`"$env:COMPUTERNAME (my computer) `"`" `"  "
 # =" --group ""Test group"" "
 
 # this works too
 # $PCDescription = "this computer"
-# start-process -Wait msiexec -ArgumentList "/i `"C:\kits\TeamViewer-Host\TeamViewer_Host.msi`" /qn CUSTOMCONFIGID=yzvjkgn APITOKEN=11536339-GUVJo4ZMhiV9VErAC1xZ ASSIGNMENTOPTIONS=`"--grant-easy-access --alias `"`"$env:COMPUTERNAME ($PCDescription) `"`" `"  "
+# start-process -Wait msiexec -ArgumentList "/i `"C:\kits\TeamViewer-Host\TeamViewer_Host.msi`" /qn CUSTOMCONFIGID=configid APITOKEN=SOME-API-TOKEN ASSIGNMENTOPTIONS=`"--grant-easy-access --alias `"`"$env:COMPUTERNAME ($PCDescription) `"`" `"  "
 
 # next phase, with dialog box
 function getValues($formTitle, $textTitle){
@@ -76,4 +76,4 @@ Write-Output $schema
 
 $PCDescriptionJoin = -join("(", $PCDescription, ")")
 Write-Output $PCDescriptionJoin
-start-process -Wait msiexec -ArgumentList "/i `"C:\kits\TeamViewer-Host\TeamViewer_Host.msi`" /passive CUSTOMCONFIGID=yzvjkgn APITOKEN=11536339-GUVJo4ZMhiV9VErAC1xZ ASSIGNMENTOPTIONS=`"--grant-easy-access --alias `"`"$env:COMPUTERNAME $PCDescriptionJoin `"`" `"  "
+start-process -Wait msiexec -ArgumentList "/i `"C:\kits\TeamViewer-Host\TeamViewer_Host.msi`" /passive CUSTOMCONFIGID=configid APITOKEN=SOME-API-TOKEN ASSIGNMENTOPTIONS=`"--grant-easy-access --alias `"`"$env:COMPUTERNAME $PCDescriptionJoin `"`" `"  "
