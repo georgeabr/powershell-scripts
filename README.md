@@ -1,4 +1,8 @@
 
+## Powershell/.cmd scripts for post install configuration of a computer
+
+test [link](windows-deploy/activate-windows.ps1)
+
 ## Powershell scripts to solve AD/Exchange tasks
 ### Windows deployment
 - Create a bootable USB ISO from a Windows install folder - [link](create-boot-iso.ps1)
