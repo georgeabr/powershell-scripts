@@ -15,6 +15,7 @@ This is needed for adding the computer to the AD domain.','Please log in to the 
     $testIP = test_connection_ipv4($IP)
 }
 
+# display a dialog box to notify user of what's next
 Write-Output "connected"
 
 [System.Windows.MessageBox]::Show('Computer is now connected to VPN.
