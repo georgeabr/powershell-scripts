@@ -16,7 +16,8 @@
 ### For MS Exchange
 - Various commands - [link](ms-exchange-various.ps1)
 - Add access for multiple users to multiple calendars - [link](add-multiple-users-to-multiple-calendars.ps1)
-- Export all distribution Group and all members in Exchange and Office 365 - [external link](https://www.azure365pro.com/how-to-export-all-distribution-group-and-all-members-of-it-exchange-2010/)  
+- Export all distribution Group and all members in Exchange and Office 365 - [external link](https://www.azure365pro.com/how-to-export-all-distribution-group-and-all-members-of-it-exchange-2010/)
+- Get SMTP aliases for an O365 email address [link](get-smtp-aliases.ps1)
 
 ### Various
 - Get Office 365 users and licenses - [link](office365-users-licenses.ps1)
