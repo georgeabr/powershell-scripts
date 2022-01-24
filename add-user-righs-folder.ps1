@@ -1,7 +1,7 @@
 # Powershell script = add user rights to folder = run as admin
 # https://docs.microsoft.com/en=us/dotnet/api/system.security.accesscontrol.filesystemrights
 
-$objFolder = '\\192.168.113.10\Folder'
+$objFolder = '\\10.10.10.10\Folder'
 $objUserName = 'CORP\user'
 $objRights = 'Read,Traverse,Modify,Delete,CreateDirectories,Write'
 # $objFolder = 'd:\temp'
