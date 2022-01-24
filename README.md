@@ -11,7 +11,7 @@
 ### Windows deployment
 - Create a bootable USB ISO from a Windows install folder - [link](create-boot-iso.ps1)
 ### For Active Directory
-- Various commands - [link](ad-various.ps1)
+- Various commands - [link](AD-various.ps1)
 - Add user rights to folder - [link](add-user-righs-folder.ps1)
 ### For MS Exchange
 - Various commands - [link](ms-exchange-various.ps1)
