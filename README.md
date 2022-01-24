@@ -3,7 +3,7 @@
 
 - activate Windows based on product key embedded in the PC BIOS - [link](windows-deploy/activate-windows.ps1)
 - rename computer to its serial number, join it to the domain and reboot - [link](windows-deploy/rename-join-computer.ps1)
-- enable Bitlocker on drive C and save key on a network share - [link](windows-deploy/enable-bitlocker.ps1)
+- enable Bitlocker on drive C and save recovery key on a network share - [link](windows-deploy/enable-bitlocker.ps1)
 - install ESET AV with license key and agent - [link](windows-deploy/eset-av-agent.ps1)
 - show a dialog box to rename PC; add computer to the TeamViewer PC list - [link](windows-deploy/rename-pc-teamviewer.ps1)
 
