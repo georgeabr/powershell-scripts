@@ -7,7 +7,7 @@
 - install ESET AV with license key and agent - [link](windows-deploy/eset-av-agent.ps1)
 - show a dialog box to rename PC; add computer to the TeamViewer PC list - [link](windows-deploy/rename-pc-teamviewer.ps1)
 
-## Powershell scripts to solve AD/Exchange tasks
+## Powershell scripts to solve Active Directory/Exchange tasks
 ### Windows deployment
 - Create a bootable USB ISO from a Windows install folder - [link](create-boot-iso.ps1)
 ### For Active Directory
