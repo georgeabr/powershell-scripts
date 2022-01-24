@@ -26,7 +26,7 @@ Add-MailboxPermission -Identity "A Forms" -User emma -AccessRights FullAccess -I
 Get-Mailbox "A Forms" | Add-ADPermission -User emma -AccessRights ExtendedRight -ExtendedRights "Send As" -InheritanceType All
 Get-Mailbox "A Forms" | Get-MailboxPermission -User emma.rowe | ft -AutoSize
 
-Get-ADPermission -Identity "National President" | where {($_.ExtendedRights -like "*Send-As*") -and ($_.User -like "*emma*")} |Format-Table -AutoSize Identity,User
+Get-ADPermission -Identity "MailboxName" | where {($_.ExtendedRights -like "*Send-As*") -and ($_.User -like "*tess*")} |Format-Table -AutoSize Identity,User
 - for Exchange online:
 Add-RecipientPermission "SharedMailboxName" -AccessRights SendAs -Trustee "Tess"
 
