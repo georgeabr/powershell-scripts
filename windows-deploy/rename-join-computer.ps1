@@ -1,7 +1,7 @@
 # rename computer to its serial number, join the computer to the domain and reboot, all in one go
 
 $Cred = $(New-Object -Type 'PSCredential' -Arg 'CORP\djoin',$(ConvertTo-SecureString 'password' -AsPlain -Force))
-$OU = 'OU=PCS,OU=Computers,OU=Company,DC=corp,DC=thefedonline,DC=com'
+$OU = 'OU=PCS,OU=Computers,OU=Company,DC=corp,DC=domain,DC=com'
 
 $LocalAdminUser = 'local-admin'
 $LocalAdminPassword = 'password' | ConvertTo-SecureString -AsPlainText -Force
