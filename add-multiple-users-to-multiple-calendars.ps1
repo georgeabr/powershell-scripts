@@ -6,8 +6,8 @@ $global:debug_print = '2'
 # 2 - show WhatIf only, does not modify
 # WRITE-output($debug_print)
 
-$source_users = 'user1', 'user2'
-$target_calendars = 'Brian','Anne','Stephen'
+$source_users = 'John', 'Jane'
+$target_calendars = 'Lia','Anne','Carrie'
 # people in the list source_users will be granted access the calendars of people in the list target_calendars
 # What if: Adding mailbox folder permission on "Anne:\calendar" for user "National President", access rights "'Reviewer'".
 
