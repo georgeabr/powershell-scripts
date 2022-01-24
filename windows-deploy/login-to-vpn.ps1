@@ -4,7 +4,7 @@ Add-Type -AssemblyName PresentationFramework
 
 function test_connection_ipv4($ipv4) { if (test-connection $ipv4 -Count 1 -ErrorAction SilentlyContinue ) {10} else {20} }
 
-$IP = "192.168.113.10"
+$IP = "10.10.10.10"
 $testIP = test_connection_ipv4($IP)
 
 while ($testIP -eq 20)
