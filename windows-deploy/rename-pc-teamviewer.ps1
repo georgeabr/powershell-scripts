@@ -70,7 +70,7 @@ function getValues($formTitle, $textTitle){
 }
 
 # $PCDescription =""
-$PCDescription = getValues "Who is using this computer?" "Enter computer description, for Teamviewer identification.`nFor example, Anne Baxter's laptop.`nCancel or no values will append (no description) to S/N."
+$PCDescription = getValues "Who is using this computer?" "Enter computer description, for Teamviewer identification.`nFor example, Jane's laptop.`nCancel or no values will append (no description) to S/N."
 if (!$PCDescription) { $PCDescription = "no description" }
 Write-Output $schema
 
