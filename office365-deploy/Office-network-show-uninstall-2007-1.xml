@@ -1,5 +1,5 @@
 <Configuration ID="3265ef9f-f051-4b28-b13a-060c46ed8544">
-  <Add OfficeClientEdition="64" SourcePath="\\192.168.113.11\Office365" Channel="SemiAnnual" AllowCdnFallback="TRUE" MigrateArch="TRUE">
+  <Add OfficeClientEdition="64" SourcePath="\\10.10.10.11\Office365" Channel="SemiAnnual" AllowCdnFallback="TRUE" MigrateArch="TRUE">
     <Product ID="O365BusinessRetail">
       <Language ID="MatchOS" />
       <Language ID="MatchPreviousMSI" />
