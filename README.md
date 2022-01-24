@@ -23,4 +23,4 @@
 - Get Office 365 users and licenses - [link](office365-users-licenses.ps1)
 - Get pending Windows updates - [link](pending-windows-updates.ps1)
 - Get version of locally installed Office 365 - [link](get-o365-version.ps1)
-- Get Azure AD license details - [link](get-azureAD-license-details.ps1)
+- Get Azure AD user license details - [link](get-azureAD-license-details.ps1)
