@@ -3,7 +3,7 @@
  $Cred = $(New-Object -Type 'PSCredential' -Arg 'CORP\djoin',$(ConvertTo-SecureString 'password' -AsPlain -Force))
 
 # Remove-PSDrive -Name "X"
-#New-PSDrive -Name "X" -Root "\\192.168.113.11\Windows-deploy" -Persist -PSProvider FileSystem -Credential $Cred
+#New-PSDrive -Name "X" -Root "\\10.10.10.11\Windows-deploy" -Persist -PSProvider FileSystem -Credential $Cred
 
 # Get-Item "X:\kits"
 # start-process -Wait msiexec -ArgumentList "/i `"X:\kits\eset-agent-av\agent_x64.msi`" /qn "
