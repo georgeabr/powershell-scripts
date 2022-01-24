@@ -3,7 +3,7 @@ Get-MessageTrackingLog -Recipients xxx@yahoo.co.uk,xxx1@yahoo.com -Start "2/1/20
 Get-MessageTrackingLog -Recipients xxx@test.org.uk -Start "11/18/2020 8:00AM" -End "11/20/2020 8:00AM" -MessageSubject "zoom"|Select EventId,Timestamp,Sender,Recipients,MessageSubject | ft | Out-String -Width 300 | out-file .\emails.txt
 
 #filter mail contacts
-get-mailcontact | where-object {$_.name -like  "*Wagg*"} | format-list -Property Alias,DisplayName,PrimarySmtpAddress
+get-mailcontact | where-object {$_.name -like  "*Name*"} | format-list -Property Alias,DisplayName,PrimarySmtpAddress
 
 # Export members, titles and email addresses for a distribution list - Exchange powershell
 Get-DistributionGroup DistributionGroupName | Get-DistributionGroupMember | select DisplayName,Title,PrimarySMTPAddress | Export-CSV dl-DistributionGroupName.csv
